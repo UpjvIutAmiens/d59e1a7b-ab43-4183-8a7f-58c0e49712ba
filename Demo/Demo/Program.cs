@@ -18,12 +18,10 @@ namespace Demo
             string affichage = "";
             for (int i =0; i <=valMax; i++)
             {
-                affichage += 
-                    string.Format("{0:00} x {1,-4} = {2,10:C}",
-                    i,              // Element : 0
-                    multiple,       // Element : 1
-                    multiple * i    // Element : 2
-                    );
+                // interpolated string (C# >= v6)
+                int resultat = multiple * i;
+                affichage +=
+                    $"{i:00} x {multiple,4} = {resultat,10:C}";
                  
                 affichage += "\n";
             }
